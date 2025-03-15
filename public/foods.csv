@@ -1,0 +1,53 @@
+id,name,origin,category,giValue
+1,Apple,USA,Fruit,38
+2,Orange,USA,Fruit,43
+3,Banana,USA,Fruit,51
+4,Carrot,USA,Vegetable,71
+5,White Rice,USA,Grain,73
+6,Brown Rice,USA,Grain,68
+7,White Bread,USA,Grain,75
+8,Whole Wheat Bread,USA,Grain,69
+9,White Pasta,USA,Grain,49
+10,Whole Wheat Pasta,USA,Grain,37
+11,White Potato,USA,Vegetable,82
+12,Sweet Potato,USA,Vegetable,70
+13,White Sugar,USA,Sweetener,65
+14,Honey,USA,Sweetener,55
+15,Chocolate,USA,Sweetener,40
+16,White Flour,USA,Grain,85
+17,Whole Wheat Flour,USA,Grain,74
+18,White Tortilla,USA,Grain,30
+19,Whole Wheat Tortilla,USA,Grain,47
+20,White Bagel,USA,Grain,72
+21,Whole Wheat Bagel,USA,Grain,69
+22,White Cake,USA,Grain,67
+23,Whole Wheat Cake,USA,Grain,62
+24,White Muffin,USA,Grain,70
+25,Whole Wheat Muffin,USA,Grain,65
+26,White Pancake,USA,Grain,67
+27,Whole Wheat Pancake,USA,Grain,66
+28,White Waffle,USA,Grain,76
+29,Whole Wheat Waffle,USA,Grain,69
+30,White Donut,USA,Grain,76
+31,Whole Wheat Donut,USA,Grain,70
+32,White Cookie,USA,Grain,68
+33,Whole Wheat Cookie,USA,Grain,61
+34,White Pie,USA,Grain,67
+35,Whole Wheat Pie,USA,Grain,59
+36,White Cake,USA,Grain,67
+37,Whole Wheat Cake,USA,Grain,62
+38,White Muffin,USA,Grain,70
+39,Whole Wheat Muffin,USA,Grain,65
+40,White Pancake,USA,Grain,67
+41,Whole Wheat Pancake,USA,Grain,66
+42,White Waffle,USA,Grain,76
+43,Whole Wheat Waffle,USA,Grain,69
+44,White Donut,USA,Grain,76
+45,Whole Wheat Donut,USA,Grain,70
+46,White Cookie,USA,Grain,68
+47,Whole Wheat Cookie,USA,Grain,61
+48,White Pie,USA,Grain,67
+49,Whole Wheat Pie,USA,Grain,59
+50,White Cake,USA,Grain,67
+51,Whole Wheat Cake,USA,Grain,62
+52,White Muffin,India,Grain,70

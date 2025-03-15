@@ -1,0 +1,789 @@
+---
+import Navbar from "./Navbar.astro";
+---
+
+<Navbar />
+
+<!-- Hero Section -->
+<section class="w-full bg-black text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Left Side: SVG Illustration -->
+      <div class="flex justify-center md:justify-end">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 500 400"
+          class="w-full max-w-md"
+        >
+          <!-- Background -->
+          <rect width="500" height="400" fill="#1a1a1a" rx="8" ry="8"></rect>
+
+          <!-- Glucose Chart -->
+          <path
+            d="M50,320 C100,320 100,200 150,200 S200,300 250,300 S300,100 350,100 S400,180 450,180"
+            stroke="#522258"
+            stroke-width="4"
+            fill="none"></path>
+
+          <!-- Low GI Zone -->
+          <rect
+            x="50"
+            y="250"
+            width="400"
+            height="70"
+            fill="#388e3c"
+            opacity="0.2"></rect>
+          <text x="60" y="290" fill="#4ade80" font-size="14">Low GI (≤55)</text>
+
+          <!-- Medium GI Zone -->
+          <rect
+            x="50"
+            y="180"
+            width="400"
+            height="70"
+            fill="#f59e0b"
+            opacity="0.2"></rect>
+          <text x="60" y="220" fill="#fcd34d" font-size="14"
+            >Medium GI (56-69)</text
+          >
+
+          <!-- High GI Zone -->
+          <rect
+            x="50"
+            y="80"
+            width="400"
+            height="100"
+            fill="#b91c1c"
+            opacity="0.2"></rect>
+          <text x="60" y="120" fill="#f87171" font-size="14">High GI (≥70)</text
+          >
+
+          <!-- X-axis -->
+          <line
+            x1="50"
+            y1="320"
+            x2="450"
+            y2="320"
+            stroke="#666"
+            stroke-width="2"></line>
+          <text x="250" y="350" fill="#ccc" font-size="14" text-anchor="middle"
+            >Time</text
+          >
+
+          <!-- Y-axis -->
+          <line x1="50" y1="80" x2="50" y2="320" stroke="#666" stroke-width="2"
+          ></line>
+          <text
+            x="30"
+            y="200"
+            fill="#ccc"
+            font-size="14"
+            text-anchor="middle"
+            transform="rotate(-90 30 200)">Blood Glucose</text
+          >
+
+          <!-- Food Icons -->
+          <circle cx="150" cy="200" r="8" fill="#fff"></circle>
+          <circle cx="250" cy="300" r="8" fill="#4ade80"></circle>
+          <circle cx="350" cy="100" r="8" fill="#f87171"></circle>
+        </svg>
+      </div>
+
+      <!-- Right Side: Text Content -->
+      <div class="flex flex-col space-y-6">
+        <h1
+          class="text-4xl md:text-5xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
+        >
+          GI Food Tracker
+        </h1>
+
+        <p class="text-xl text-gray-300">
+          Your comprehensive resource for understanding and tracking the
+          glycemic index of foods for better health management.
+        </p>
+
+        <div class="bg-[#1a1a1a] p-6 rounded-lg border border-[#4d4d4d]">
+          <h2 class="text-2xl font-semibold mb-3 text-[#522258]">
+            What is Glycemic Index?
+          </h2>
+          <p class="text-gray-300">
+            The Glycemic Index (GI) is a ranking system for carbohydrates based
+            on their effect on blood glucose levels. Foods with a low GI value
+            (55 or less) are digested and absorbed slowly, causing a gradual
+            rise in blood sugar. Foods with a high GI value (70 or more) cause a
+            rapid spike in blood glucose levels.
+          </p>
+          <div class="mt-4 flex items-center space-x-6">
+            <div class="flex items-center">
+              <span class="w-4 h-4 rounded-full bg-green-500 mr-2"></span>
+              <span>Low GI (≤55)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-4 h-4 rounded-full bg-yellow-500 mr-2"></span>
+              <span>Medium GI (56-69)</span>
+            </div>
+            <div class="flex items-center">
+              <span class="w-4 h-4 rounded-full bg-red-500 mr-2"></span>
+              <span>High GI (≥70)</span>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="bg-[#522258] hover:bg-[#522258cc] text-white py-3 px-6 rounded-lg font-medium self-start mt-4 transition duration-300"
+        >
+          Start Exploring
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  -->
+<div class="bg-black -mt-40 w-full relative overflow-hidden">
+  <!-- Grid pattern container -->
+  <div
+    class="absolute inset-0 bg-[linear-gradient(to_right,#111_1px,transparent_1px),linear-gradient(to_bottom,#111_1px,transparent_1px)] bg-[size:35px_35px] z-1"
+  >
+  </div>
+
+  <!-- Custom directional vignette overlay -->
+  <div class="absolute inset-0 pointer-events-none z-2">
+    <div
+      class="absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-black to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-x-0 bottom-0 h-1/5 bg-gradient-to-t from-black to-transparent"
+    >
+    </div>
+
+    <div
+      class="absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-black via-black/50 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-black via-black/50 to-transparent"
+    >
+    </div>
+  </div>
+</div>
+<div class="bg-black flex justify-center items-center h-screen">
+  <div class="w-4/5 flex-col flex gap-10 items-center justify-between">
+    <!-- Enhanced Search & Filter Section -->
+    <div class="w-full space-y-4">
+      <!-- Search bar -->
+      <div
+        class="flex items-center justify-between w-full bg-[#1a1a1a] border border-[#4d4d4d] text-white shadow-lg rounded-lg overflow-hidden"
+      >
+        <input
+          id="searchInput"
+          class="ml-8 mr-8 outline-none text-lg w-full bg-transparent py-4"
+          type="text"
+          placeholder="Enter food item"
+        />
+        <button
+          id="searchButton"
+          class="px-8 py-6 cursor-pointer bg-[#522258] hover:bg-[#522258cc]"
+          >Search</button
+        >
+      </div>
+
+      <!-- Filters and Sort Options -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Category Filter -->
+        <div class="bg-[#1a1a1a] border border-[#4d4d4d] rounded-lg p-4">
+          <label class="block text-gray-300 mb-2">Category</label>
+          <select
+            id="categoryFilter"
+            class="w-full bg-[#2a2a2a] text-white p-2 rounded border border-[#4d4d4d] outline-none focus:border-[#522258]"
+          >
+            <option value="">All Categories</option>
+            <!-- Options will be populated via JavaScript -->
+          </select>
+        </div>
+
+        <!-- Origin Filter -->
+        <div class="bg-[#1a1a1a] border border-[#4d4d4d] rounded-lg p-4">
+          <label class="block text-gray-300 mb-2">Origin</label>
+          <select
+            id="originFilter"
+            class="w-full bg-[#2a2a2a] text-white p-2 rounded border border-[#4d4d4d] outline-none focus:border-[#522258]"
+          >
+            <option value="">All Origins</option>
+            <!-- Options will be populated via JavaScript -->
+          </select>
+        </div>
+
+        <!-- Sort Options -->
+        <div class="bg-[#1a1a1a] border border-[#4d4d4d] rounded-lg p-4">
+          <label class="block text-gray-300 mb-2">Sort by GI Value</label>
+          <select
+            id="sortOption"
+            class="w-full bg-[#2a2a2a] text-white p-2 rounded border border-[#4d4d4d] outline-none focus:border-[#522258]"
+          >
+            <option value="">Default Order</option>
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Active Filters Display -->
+      <div id="activeFilters" class="flex flex-wrap gap-2 py-2">
+        <!-- Active filters will appear here -->
+      </div>
+    </div>
+
+    <div class="w-full overflow-x-auto">
+      <table
+        class="w-full bg-[#1a1a1a] border border-[#4d4d4d] text-white shadow-lg font-light"
+      >
+        <thead class="border-b border-[#4d4d4d] bg-[#252525]">
+          <tr>
+            <th class="px-6 py-4 text-left">#</th>
+            <th class="px-6 py-4 text-left">Food Item</th>
+            <th class="px-6 py-4 text-left">Origin</th>
+            <th class="px-6 py-4 text-left">Category</th>
+            <th class="px-6 py-4 text-left cursor-pointer" id="giHeader">
+              GI Value
+              <span id="sortIndicator" class="ml-1"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="foodTableBody" class="divide-y divide-[#4d4d4d]">
+          <!-- Table rows will be populated via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination controls -->
+    <div id="pagination" class="flex justify-center gap-2 text-white">
+      <!-- Pagination buttons will be added via JavaScript -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Client-side code for Astro
+  document.addEventListener("DOMContentLoaded", function () {
+    // Store the current page and rows per page
+    let currentPage = 1;
+    const rowsPerPage = 10;
+    let allFoods = [];
+    let filteredFoods = [];
+
+    // Filter and sort state
+    let filters = {
+      search: "",
+      category: "",
+      origin: "",
+    };
+    let currentSortOption = "";
+
+    // Function to parse CSV data
+    function parseCSV(csv) {
+      const lines = csv.split("\n");
+      const headers = lines[0].split(",");
+
+      return lines
+        .slice(1)
+        .map((line) => {
+          if (!line.trim()) return null; // Skip empty lines
+
+          const values = line.split(",");
+          const food = {};
+
+          headers.forEach((header, i) => {
+            food[header.trim()] = values[i]?.trim() || "";
+          });
+
+          return food;
+        })
+        .filter(Boolean); // Remove null entries
+    }
+
+    // Function to load the CSV file
+    async function loadCSVData() {
+      try {
+        // Replace 'foods.csv' with the path to your CSV file
+        const response = await fetch("/foods.csv");
+        const csvData = await response.text();
+        allFoods = parseCSV(csvData);
+        filteredFoods = [...allFoods];
+        populateFilterOptions();
+        renderTable();
+      } catch (error) {
+        console.error("Error loading CSV:", error);
+
+        // Fallback data in case CSV loading fails
+        allFoods = [
+          {
+            id: "1",
+            name: "Apple",
+            origin: "USA",
+            category: "Fruit",
+            giValue: "38",
+          },
+          {
+            id: "2",
+            name: "Orange",
+            origin: "USA",
+            category: "Fruit",
+            giValue: "43",
+          },
+          {
+            id: "3",
+            name: "White Rice",
+            origin: "India",
+            category: "Grain",
+            giValue: "73",
+          },
+          {
+            id: "4",
+            name: "Whole Wheat Bread",
+            origin: "USA",
+            category: "Grain",
+            giValue: "69",
+          },
+          {
+            id: "5",
+            name: "White Bread",
+            origin: "USA",
+            category: "Grain",
+            giValue: "71",
+          },
+          {
+            id: "6",
+            name: "Banana",
+            origin: "Ecuador",
+            category: "Fruit",
+            giValue: "51",
+          },
+          {
+            id: "7",
+            name: "Sweet Potato",
+            origin: "Peru",
+            category: "Vegetable",
+            giValue: "63",
+          },
+          {
+            id: "8",
+            name: "Lentils",
+            origin: "Turkey",
+            category: "Legume",
+            giValue: "32",
+          },
+          {
+            id: "9",
+            name: "Quinoa",
+            origin: "Bolivia",
+            category: "Grain",
+            giValue: "53",
+          },
+          {
+            id: "10",
+            name: "Chickpeas",
+            origin: "Middle East",
+            category: "Legume",
+            giValue: "28",
+          },
+          {
+            id: "11",
+            name: "Brown Rice",
+            origin: "China",
+            category: "Grain",
+            giValue: "68",
+          },
+          {
+            id: "12",
+            name: "Spaghetti",
+            origin: "Italy",
+            category: "Grain",
+            giValue: "45",
+          },
+        ];
+        filteredFoods = [...allFoods];
+        populateFilterOptions();
+        renderTable();
+      }
+    }
+
+    // Function to populate filter dropdowns
+    function populateFilterOptions() {
+      // Get unique categories and origins
+      const categories = [
+        ...new Set(allFoods.map((food) => food.category).filter(Boolean)),
+      ];
+      const origins = [
+        ...new Set(allFoods.map((food) => food.origin).filter(Boolean)),
+      ];
+
+      // Populate category dropdown
+      const categoryFilter = document.getElementById("categoryFilter");
+      categories.sort().forEach((category) => {
+        const option = document.createElement("option");
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+      });
+
+      // Populate origin dropdown
+      const originFilter = document.getElementById("originFilter");
+      origins.sort().forEach((origin) => {
+        const option = document.createElement("option");
+        option.value = origin;
+        option.textContent = origin;
+        originFilter.appendChild(option);
+      });
+    }
+
+    // Function to apply filters and sort
+    function applyFiltersAndSort() {
+      // Start with all foods
+      let result = [...allFoods];
+
+      // Apply search filter
+      if (filters.search) {
+        result = result.filter(
+          (food) =>
+            food.name?.toLowerCase().includes(filters.search.toLowerCase()) ||
+            food.category
+              ?.toLowerCase()
+              .includes(filters.search.toLowerCase()) ||
+            food.origin?.toLowerCase().includes(filters.search.toLowerCase())
+        );
+      }
+
+      // Apply category filter
+      if (filters.category) {
+        result = result.filter((food) => food.category === filters.category);
+      }
+
+      // Apply origin filter
+      if (filters.origin) {
+        result = result.filter((food) => food.origin === filters.origin);
+      }
+
+      // Apply sorting
+      if (currentSortOption === "low-to-high") {
+        result.sort((a, b) => parseFloat(a.giValue) - parseFloat(b.giValue));
+      } else if (currentSortOption === "high-to-low") {
+        result.sort((a, b) => parseFloat(b.giValue) - parseFloat(a.giValue));
+      }
+
+      // Update filtered foods and reset to first page
+      filteredFoods = result;
+      currentPage = 1;
+      updateActiveFilters();
+      renderTable();
+    }
+
+    // Function to update active filters display
+    function updateActiveFilters() {
+      const activeFiltersDiv = document.getElementById("activeFilters");
+      activeFiltersDiv.innerHTML = "";
+
+      // Create filter pills
+      const createFilterPill = (label, value, filterType) => {
+        const pill = document.createElement("div");
+        pill.className =
+          "bg-[#2a2a2a] text-white px-3 py-1 rounded-full flex items-center";
+        pill.innerHTML = `
+        <span>${label}: ${value}</span>
+        <button class="ml-2" data-filter-type="${filterType}">✕</button>
+      `;
+
+        // Add remove event
+        pill.querySelector("button").addEventListener("click", () => {
+          filters[filterType] = "";
+
+          // Reset corresponding dropdown
+          if (filterType === "category") {
+            document.getElementById("categoryFilter").value = "";
+          } else if (filterType === "origin") {
+            document.getElementById("originFilter").value = "";
+          } else if (filterType === "search") {
+            document.getElementById("searchInput").value = "";
+          }
+
+          applyFiltersAndSort();
+        });
+
+        activeFiltersDiv.appendChild(pill);
+      };
+
+      // Add pills for active filters
+      if (filters.search) {
+        createFilterPill("Search", filters.search, "search");
+      }
+
+      if (filters.category) {
+        createFilterPill("Category", filters.category, "category");
+      }
+
+      if (filters.origin) {
+        createFilterPill("Origin", filters.origin, "origin");
+      }
+
+      // Add sort indicator if sorting is applied
+      if (currentSortOption) {
+        const sortPill = document.createElement("div");
+        sortPill.className =
+          "bg-[#522258] text-white px-3 py-1 rounded-full flex items-center";
+        sortPill.innerHTML = `
+        <span>Sorted by: ${currentSortOption === "low-to-high" ? "Low to High" : "High to Low"}</span>
+        <button class="ml-2" data-sort-reset="true">✕</button>
+      `;
+
+        // Add remove sort event
+        sortPill.querySelector("button").addEventListener("click", () => {
+          currentSortOption = "";
+          document.getElementById("sortOption").value = "";
+          document.getElementById("sortIndicator").textContent = "";
+          applyFiltersAndSort();
+        });
+
+        activeFiltersDiv.appendChild(sortPill);
+      }
+    }
+
+    // Function to render the table with current page data
+    function renderTable() {
+      const tableBody = document.getElementById("foodTableBody");
+      const startIndex = (currentPage - 1) * rowsPerPage;
+      const endIndex = startIndex + rowsPerPage;
+      const currentPageData = filteredFoods.slice(startIndex, endIndex);
+
+      // Update sort indicator
+      const sortIndicator = document.getElementById("sortIndicator");
+      if (currentSortOption === "low-to-high") {
+        sortIndicator.textContent = "↑";
+      } else if (currentSortOption === "high-to-low") {
+        sortIndicator.textContent = "↓";
+      } else {
+        sortIndicator.textContent = "";
+      }
+
+      // Clear existing rows
+      tableBody.innerHTML = "";
+
+      // Show no results message if filtered foods is empty
+      if (filteredFoods.length === 0) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td colspan="5" class="px-6 py-8 text-center text-gray-400">No matching foods found. Try adjusting your filters.</td>
+      `;
+        tableBody.appendChild(row);
+
+        // Hide pagination
+        document.getElementById("pagination").style.display = "none";
+        return;
+      }
+
+      // Show pagination
+      document.getElementById("pagination").style.display = "flex";
+
+      // Add rows for current page
+      currentPageData.forEach((food, index) => {
+        const row = document.createElement("tr");
+        row.className = "hover:bg-[#2a2a2a] transition-colors duration-150";
+
+        // Add GI value color indicator based on value
+        let giValueColor = "";
+        const giValue = parseFloat(food.giValue);
+
+        if (giValue <= 55) {
+          giValueColor = "text-green-400"; // Low GI
+        } else if (giValue <= 69) {
+          giValueColor = "text-yellow-400"; // Medium GI
+        } else {
+          giValueColor = "text-red-400"; // High GI
+        }
+
+        row.innerHTML = `
+        <td class="px-6 py-4">${startIndex + index + 1}</td>
+        <td class="px-6 py-4">${food.name}</td>
+        <td class="px-6 py-4">${food.origin}</td>
+        <td class="px-6 py-4">${food.category}</td>
+        <td class="px-6 py-4 ${giValueColor} font-medium">${food.giValue}</td>
+      `;
+
+        tableBody.appendChild(row);
+      });
+
+      renderPagination();
+    }
+
+    // Function to render pagination controls
+    function renderPagination() {
+      const paginationDiv = document.getElementById("pagination");
+      const totalPages = Math.ceil(filteredFoods.length / rowsPerPage);
+
+      // Clear existing pagination
+      paginationDiv.innerHTML = "";
+
+      // Previous button
+      const prevButton = document.createElement("button");
+      prevButton.textContent = "Previous";
+      prevButton.className = `px-3 py-2 rounded-lg ${currentPage === 1 ? "bg-[#1a1a1a] text-gray-600 cursor-not-allowed" : "bg-[#2a2a2a] text-gray-300 hover:bg-[#3a3a3a]"}`;
+      prevButton.disabled = currentPage === 1;
+      prevButton.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderTable();
+        }
+      });
+      paginationDiv.appendChild(prevButton);
+
+      // Page numbers (show 5 pages max)
+      const maxVisiblePages = 5;
+      let startPage = Math.max(
+        1,
+        currentPage - Math.floor(maxVisiblePages / 2)
+      );
+      let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+      // Adjust startPage if we're at the end
+      if (endPage - startPage + 1 < maxVisiblePages) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+
+      // First page button if not visible
+      if (startPage > 1) {
+        const firstPageBtn = document.createElement("button");
+        firstPageBtn.textContent = "1";
+        firstPageBtn.className =
+          "px-3 py-2 mx-1 rounded bg-[#2a2a2a] text-gray-300 hover:bg-[#3a3a3a]";
+        firstPageBtn.addEventListener("click", () => {
+          currentPage = 1;
+          renderTable();
+        });
+        paginationDiv.appendChild(firstPageBtn);
+
+        // Ellipsis if needed
+        if (startPage > 2) {
+          const ellipsis = document.createElement("span");
+          ellipsis.textContent = "...";
+          ellipsis.className = "px-2 py-2 text-gray-500";
+          paginationDiv.appendChild(ellipsis);
+        }
+      }
+
+      // Page buttons
+      for (let i = startPage; i <= endPage; i++) {
+        const pageButton = document.createElement("button");
+        pageButton.textContent = i;
+        pageButton.className = `px-3 py-2 mx-1 rounded ${i === currentPage ? "bg-[#522258] text-white" : "bg-[#2a2a2a] text-gray-300 hover:bg-[#3a3a3a]"}`;
+        pageButton.addEventListener("click", () => {
+          currentPage = i;
+          renderTable();
+        });
+        paginationDiv.appendChild(pageButton);
+      }
+
+      // Ellipsis and last page if needed
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+          const ellipsis = document.createElement("span");
+          ellipsis.textContent = "...";
+          ellipsis.className = "px-2 py-2 text-gray-500";
+          paginationDiv.appendChild(ellipsis);
+        }
+
+        const lastPageBtn = document.createElement("button");
+        lastPageBtn.textContent = totalPages;
+        lastPageBtn.className =
+          "px-3 py-2 mx-1 rounded bg-[#2a2a2a] text-gray-300 hover:bg-[#3a3a3a]";
+        lastPageBtn.addEventListener("click", () => {
+          currentPage = totalPages;
+          renderTable();
+        });
+        paginationDiv.appendChild(lastPageBtn);
+      }
+
+      // Next button
+      const nextButton = document.createElement("button");
+      nextButton.textContent = "Next";
+      nextButton.className = `px-3 py-2 rounded-lg ${currentPage === totalPages ? "bg-[#1a1a1a] text-gray-600 cursor-not-allowed" : "bg-[#2a2a2a] text-gray-300 hover:bg-[#3a3a3a]"}`;
+      nextButton.disabled = currentPage === totalPages;
+      nextButton.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderTable();
+        }
+      });
+      paginationDiv.appendChild(nextButton);
+    }
+
+    // Set up event listeners
+    // Set up event listeners
+    const searchButton = document.getElementById("searchButton");
+    if (searchButton) {
+      searchButton.addEventListener("click", () => {
+        filters.search = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        applyFiltersAndSort();
+      });
+    }
+
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+      searchInput.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") {
+          filters.search = e.target.value.toLowerCase();
+          applyFiltersAndSort();
+        }
+      });
+    }
+
+    // Set up category filter
+    const categoryFilter = document.getElementById("categoryFilter");
+    if (categoryFilter) {
+      categoryFilter.addEventListener("change", (e) => {
+        filters.category = e.target.value;
+        applyFiltersAndSort();
+      });
+    }
+
+    // Set up origin filter
+    const originFilter = document.getElementById("originFilter");
+    if (originFilter) {
+      originFilter.addEventListener("change", (e) => {
+        filters.origin = e.target.value;
+        applyFiltersAndSort();
+      });
+    }
+
+    // Set up sort options
+    const sortOptionElement = document.getElementById("sortOption");
+    if (sortOptionElement) {
+      sortOptionElement.addEventListener("change", (e) => {
+        currentSortOption = e.target.value;
+        applyFiltersAndSort();
+      });
+    }
+
+    // GI header click for sorting
+    const giHeader = document.getElementById("giHeader");
+    if (giHeader) {
+      giHeader.addEventListener("click", () => {
+        // Toggle sorting
+        if (currentSortOption === "low-to-high") {
+          currentSortOption = "high-to-low";
+        } else {
+          currentSortOption = "low-to-high";
+        }
+
+        // Update dropdown to match
+        document.getElementById("sortOption").value = currentSortOption;
+
+        applyFiltersAndSort();
+      });
+    }
+
+    // Load CSV data
+    loadCSVData();
+  });
+</script>
